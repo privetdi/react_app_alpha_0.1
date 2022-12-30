@@ -3,10 +3,10 @@ import BlogPost from './BlogPost';
 
 function App() {
   return (
-      <>
-          <h1>123</h1>
+      <div>
+          <h1>1234</h1>
           <BlogPost title={"123"}/>
-      </>
+      </div>
   )
 };
 

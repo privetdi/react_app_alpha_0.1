@@ -5,6 +5,8 @@ import Time from './Time';
 class BlogPost extends React.Component {
     constructor(props){
         super(props)
+        //пока компонент жи, хранит его состояние в виде обьекта, при смерти компонента обнуляет состояние до состояния state в конструторе
+        // setState изменить состояние вне конструктора
         this.state = { clicked: false }
     }
 
