@@ -4,11 +4,19 @@ class Time extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            date: new Date()
+            date: new Date() 
         }
     }
 
-    //после создания автоматически вызывается?
+    static getDerivedStateFromProps(){
+        //код какой то
+        ////использовать в "state пропрос" нельзя? так ментер сказал "все хотят верстать статьи и все хотят что бы начальное состояние
+        // зависило от каких то начальных пропсов", для этого существует getDetivedStateFromProps() 
+
+    }
+
+    //после создания автоматически вызывается
+    //https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
     componentDidMount(){
         this.timerID = setInterval(
         () => this.tick(),
@@ -21,7 +29,7 @@ class Time extends React.Component{
             {date: new Date()}
         )
     }
-    //после удаления автоматически вызывается?
+    //после удаления автоматически вызывается 
     componentWillUnmount(){
         clearInterval(this.timerID)
     }
@@ -36,3 +44,6 @@ class Time extends React.Component{
 }
 
 export default Time;
+
+//функция tick переписывает state в следствеи чего происходит ВиллМонут()?
+//https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
